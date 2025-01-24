@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <button
+    onclick="
+    playGame('heads');
+    ">
+      heads
+    </button>
+    <button
+    onclick="
+    playGame('tails');
+    "
+    >
+      tails
+    </button>
+  </body>
+  <script>
+    function playGame(guess){
+      const ranNum = Math.random();
+      let result = '';
+
+      if(ranNum < 0.5){
+        result = 'heads';
+      }else if(ranNum > 0.5){
+        result = 'tails';
+      }
+
+
+      if(guess === result){
+        console.log(`You chosen ${guess}. Computer chose ${result}. You Win`)
+      }else{
+        console.log(`You chosen ${guess}. Computer chose ${result}. You lose`)
+      }
+    }
+  </script>
+</html>
