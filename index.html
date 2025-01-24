@@ -22,18 +22,22 @@
     function playGame(guess){
       const ranNum = Math.random();
       let result = '';
+      let score = {
+        wins: 0,
+        losses: 0
+      };
 
       if(ranNum < 0.5){
-        result = 'heads';
+        comMove = 'heads';
       }else if(ranNum > 0.5){
-        result = 'tails';
+        comMove = 'tails';
       }
 
 
-      if(guess === result){
-        console.log(`You chosen ${guess}. Computer chose ${result}. You Win`)
+      if(guess === comMove){
+        console.log(`You chosen ${guess}. Computer chose ${comMove}. You Win`)
       }else{
-        console.log(`You chosen ${guess}. Computer chose ${result}. You lose`)
+        console.log(`You have chose ${guess}. Computer have chose ${comMove}. You lose`)
       }
     }
   </script>
