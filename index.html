@@ -22,10 +22,6 @@
     function playGame(guess){
       const ranNum = Math.random();
       let result = '';
-      let score = {
-        wins: 0,
-        losses: 0
-      };
 
       if(ranNum < 0.5){
         comMove = 'heads';
@@ -33,12 +29,13 @@
         comMove = 'tails';
       }
 
-
       if(guess === comMove){
-        console.log(`You chosen ${guess}. Computer chose ${comMove}. You Win`)
-      }else{
-        console.log(`You have chose ${guess}. Computer have chose ${comMove}. You lose`)
+        result = 'You Win';
+      }else if(guess !== comMove){
+        result = 'You Lose';
       }
+
+      alert(`You picked ${guess}, Computer picked ${comMove}. ${result}.`);
     }
   </script>
 </html>
